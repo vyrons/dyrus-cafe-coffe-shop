@@ -7,9 +7,23 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Build
 dist
 dist-ssr
+build
+coverage
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.local
 
 # Editor directories and files
@@ -22,3 +36,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# System Files
+Thumbs.db
+Desktop.ini
+
+# Optional: Bun
+# .bun
+# bun.lockb # Recommended to commit this if using Bun, but ignoring if strictly npm/yarn workflow
