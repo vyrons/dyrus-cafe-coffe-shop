@@ -49,8 +49,8 @@ const Footer = () => {
             <div className="flex gap-10 font-ranade text-[15px] text-stone-300">
                 <div className="flex flex-col gap-2">
                     <span className="text-white font-medium uppercase tracking-wider mb-2">Visit Us</span>
-                    <p>123 Serenity Lane</p>
-                    <p>Jakarta, Indonesia</p>
+                    <p>Wangshu Inn</p>
+                    <p>Liyue, Teyvat</p>
                 </div>
                 <div className="flex flex-col gap-2">
                     <span className="text-white font-medium uppercase tracking-wider mb-2">Contact</span>
