@@ -5,15 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const containerRef = useRef(null);
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const lastScrollY = useRef(0);
   const [isDarkText, setIsDarkText] = useState(false);
 
   useGSAP(() => {
-
-    const showAnim = gsap.from(containerRef.current, { 
+    const showAnim = gsap.from(containerRef.current, {
       yPercent: -100,
       paused: true,
       duration: 0.2
@@ -23,14 +22,9 @@ const Navbar = () => {
       start: "top top",
       end: 99999,
       onUpdate: (self) => {
-        if (self.direction === -1) {
-          showAnim.play();
-        } else {
-          showAnim.reverse();
-        }
-      } 
+        self.direction === -1 ? showAnim.play() : showAnim.reverse();
+      }
     });
-
 
     const sections = document.querySelectorAll("[data-theme]");
     sections.forEach((section) => {
@@ -42,32 +36,29 @@ const Navbar = () => {
         onEnterBack: () => setIsDarkText(section.getAttribute("data-theme") === "light"),
       });
     });
-
   }, { scope: containerRef });
 
-  const navClass = `fixed top-0 left-0 w-full px-5 md:px-20 py-4 text-sm font-ranade z-50 transition-colors duration-300 ${isDarkText ? 'text-black' : 'text-white'}`;
-
   return (
-    <div ref={containerRef} className={navClass}>
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
+    <div ref={containerRef} className={`fixed top-0 left-0 w-full px-5 md:px-20 py-4 text-sm font-ranade z-50 transition-colors duration-300 ${isDarkText ? 'text-black' : 'text-white'}`}>
+      <div className="flex justify-between items-center bg-transparent">
+        {/* logo */}
         <div>
           <h1 className="text-2xl font-novar">Miaoshan</h1>
         </div>
 
-
         <div className="hidden md:flex space-x-8">
-          <a href="#home" className={`hover:text-stone-400 transition-all duration-300`}>
+          <Link to="/" className={`hover:text-stone-400 transition-all duration-300`}>
             Home
-          </a>
-          <a href="#bestseller" className={`hover:text-stone-400 transition-all duration-300`}>
+          </Link>
+          <Link to="/menu" className={`hover:text-stone-400 transition-all duration-300`}>
             Menu
-          </a>
-          <a href="#about" className={`hover:text-stone-400 transition-all duration-300`}>
-            About
-          </a>
-          <a href="#findus" className={`hover:text-stone-400 transition-all duration-300`}>
+          </Link>
+          <Link to="/about" className={`hover:text-stone-400 transition-all duration-300`}>
+            About Us
+          </Link>
+          <Link to="/findus" className={`hover:text-stone-400 transition-all duration-300`}>
             Find Us
-          </a>
+          </Link>
         </div>
 
 

@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../common/Button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="hero" data-theme="dark">
       <div className="relative overflow-hidden h-dvh w-screen">
@@ -31,11 +34,13 @@ const Hero = () => {
                 <Button
                   id="btn-1"
                   title="Visit the Café"
+                  onClick={() => navigate('/findus')}
                   containerClass="font-ranade bg-white w-[180px] lg:w-[200px] border border-transparent hover:backdrop-blur-sm hover:bg-white/10 hover:backdrop-blur-lg hover:border-stone-200 hover:text-stone-200 transition-all duration-300"
                 />
                 <Button
                   id="btn-2"
                   title="Our Menu"
+                  onClick={() => navigate('/menu')}
                   containerClass="font-ranade text-white w-[140px] lg:w[200px] hover:text-stone-400"
                 />
               </div>

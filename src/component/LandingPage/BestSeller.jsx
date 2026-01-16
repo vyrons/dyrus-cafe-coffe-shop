@@ -1,8 +1,10 @@
 import React from 'react';
 import { BiSolidCoffeeBean } from "react-icons/bi";
 import Button from '../common/Button';
+import { useNavigate } from 'react-router-dom';
 
 const BestSeller = () => {
+    const navigate = useNavigate();
     const products = [
         {
             name: 'Americano',
@@ -56,6 +58,7 @@ const BestSeller = () => {
             <Button
               id="btn-menu"
               title="View Menu"
+              onClick={() => navigate('/menu')}
               containerClass="font-ranade hover:text-white w-[180px] lg:w-[200px] border border-[#C1803E] hover:bg-white/10 hover:backdrop-blur-sm hover:border-[#C1803E] hover:text-white bg-[#C1803E] text-white transition-all duration-300"
               />
         </div>
