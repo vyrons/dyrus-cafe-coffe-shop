@@ -1,22 +1,17 @@
-import React from 'react';
-import Button from '../common/Button';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import Button from '../common/Button'
+import { useNavigate } from 'react-router-dom'
 
-const Intro = () => {
+const MenuDisplay = () => {
   const navigate = useNavigate();
+
   return (
-    <section id="intro" data-theme="light" className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 items-center h-auto min-h-dvh w-full bg-stone-50 p-8 lg:p-20 overflow-hidden">
-
-      <div className="relative w-full max-w-[600px] h-[400px] lg:h-[600px] rounded-3xl flex-shrink-0">
-        <img
-          src="./img/img1.webp"
-          alt="Interior of the coffee shop"
-          className="rounded-3xl object-cover w-full h-full"
-        />
-      </div>
-
-
-      <div className="flex flex-col space-y-8 justify-center w-full lg:w-auto">
+    <div data-theme="light" className='h-dvh w-screen p-20 lg:p-20 bg-stone-50'>
+        <div className='flex space-x-8'>
+          <div className='rounded-3xl overflow-hidden'>
+            <img src="./img/location.webp" alt="" className='h-[450px] w-full object-cover scale-125' />
+          </div>
+          <div className="flex flex-col space-y-8 justify-center w-full lg:w-auto">
         <div className="flex flex-col space-y-3">
           <div>
             <h2 className="font-ranade text-[20px] text-[#C1803E]">More Than Just Coffee</h2>
@@ -39,15 +34,16 @@ const Intro = () => {
 
         <div>
           <Button
-            id="btn-about"
-            title="About Us"
-            onClick={() => navigate('/about')}
+            id="btn-download"
+            title="Download Menu"
+            onClick={() => window.open('https://drive.google.com/file/d/13ZU7TQ0myL7Jqqe0aOVvSaBbPobxlRo0/view?usp=sharing', '_blank')}
             containerClass="font-ranade hover:text-[#C1803E] hover:border-[#C1803E] w-[180px] lg:w-[200px] border hover:backdrop-blur-sm hover:bg-transparent bg-[#C1803E] text-white transition-all duration-300"
           />
         </div>
       </div>
-    </section>
-  );
-};
+        </div>
+    </div>
+  )
+}
 
-export default Intro;
+export default MenuDisplay

@@ -5,7 +5,7 @@ import Intro from './Intro';
 import BestSeller from './BestSeller';
 import TheSpace from './TheSpace';
 
-import Footer from './Footer';
+import Footer from '../common/Footer';
 
 const LandingPage = () => {
   return (

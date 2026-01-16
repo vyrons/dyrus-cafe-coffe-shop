@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import Button from '../common/Button';
 import gsap from 'gsap';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   './img/img5.webp',
@@ -11,6 +12,8 @@ const images = [
 ];
 
 const TheSpace = () => {
+
+  const navigate = useNavigate();
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -77,6 +80,7 @@ const TheSpace = () => {
           <Button
             id="btn-about"
             title="Find Us"
+            onClick={() => navigate('/findus')}
             containerClass="font-ranade hover:text-[#C1803E] hover:border-[#C1803E] w-[180px] lg:w-[200px] border hover:backdrop-blur-sm hover:bg-transparent bg-[#C1803E] text-white transition-all duration-300"
           />
       </div>
