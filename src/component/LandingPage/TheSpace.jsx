@@ -3,6 +3,9 @@ import { useGSAP } from '@gsap/react';
 import Button from '../common/Button';
 import gsap from 'gsap';
 import { useNavigate } from 'react-router-dom';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const images = [
   './img/img5.webp',
@@ -54,14 +57,50 @@ const TheSpace = () => {
 
   }, { scope: containerRef });
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    tl.from('.space-title', {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      ease: 'power2.out'
+    })
+    .from('.space-subtitle', {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, '-=0.6')
+    .from('.space-images', {
+      opacity: 0,
+      scale: 0.95,
+      duration: 1,
+      ease: 'power2.out'
+    }, '-=0.5')
+    .from('.space-button', {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.4');
+
+  }, { scope: containerRef, dependencies: [] });
+
   return (
-    <div id="the-space" data-theme="light" ref={containerRef} className="h-full w-screen bg-stone-50 flex flex-col justify-center items-center p-10 lg:p-20">
+    <div id="the-space" data-theme="light" ref={containerRef} className="h-full w-full bg-stone-50 flex flex-col justify-center items-center p-10 lg:p-20">
       <div className="flex flex-col text-center justify-center mb-10">
-        <h1 className="font-novar text-[40px]">The Space</h1>
-        <h1 className="font-ranade text-[#C1803E] text-[15px]">A place to slow down.</h1>
+        <h1 className="space-title font-novar text-[40px]">The Space</h1>
+        <h1 className="space-subtitle font-ranade text-[#C1803E] text-[15px]">A place to slow down.</h1>
       </div>
 
-      <div className="relative w-full h-[400px] max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-xl">
+      <div className="space-images relative w-full h-[400px] max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-xl">
         {images.map((src, index) => (
           <div
             key={index}
@@ -76,7 +115,7 @@ const TheSpace = () => {
         ))}
       </div>
 
-      <div className='mt-10'>
+      <div className='space-button mt-10'>
           <Button
             id="btn-about"
             title="Find Us"
