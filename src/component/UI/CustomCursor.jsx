@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(true); // Start as true to prevent flash
+  const [isMobile, setIsMobile] = useState(false); // Start as false for desktop-first
   
   useEffect(() => {
     // Check if device is touch-enabled
