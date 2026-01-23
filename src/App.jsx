@@ -5,6 +5,7 @@ import Menu from './component/Menu/Menu'
 import AboutUs from './component/AboutUs/AboutUs'
 import FindUs from './component/FindUs/FindUs'
 import ScrollToTop from './component/common/ScrollToTop'
+import CustomCursor from './component/UI/CustomCursor'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <Router>
+      <CustomCursor />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />

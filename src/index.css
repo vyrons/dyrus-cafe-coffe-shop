@@ -39,3 +39,50 @@ body {
     animation: shimmer 2s infinite;
   }
 }
+
+/* Custom Cursor */
+@media (min-width: 768px) {
+  body, a, button, input, select, textarea, .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor {
+  pointer-events: none;
+  transform: translate3d(0,0,0); /* Hardware accelerate */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(193, 128, 62, 0.5);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(193, 128, 62, 0.8);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(193, 128, 62, 0.5) transparent;
+}
+
+/* Smooth scrollbar appearance on hover */
+body::-webkit-scrollbar-thumb {
+  background: rgba(193, 128, 62, 0.4);
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  background: rgba(193, 128, 62, 0.6);
+}
