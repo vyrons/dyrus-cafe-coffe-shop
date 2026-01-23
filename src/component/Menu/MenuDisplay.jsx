@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import Button from '../common/Button'
+import LazyImage from '../common/LazyImage'
 import { useNavigate } from 'react-router-dom'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -45,8 +46,13 @@ const MenuDisplay = () => {
       data-theme="light" 
       className='flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 items-center h-auto min-h-dvh w-full bg-stone-50 pt-20 md:pt-8 p-8 lg:p-20 overflow-hidden'
     >
-      <div className='menu-image relative w-full max-w-[700px] h-[350px] lg:h-[450px] rounded-3xl flex-shrink-0 overflow-hidden'>
-        <img src="./img/img9.webp" alt="Menu showcase" className='rounded-3xl object-cover w-full h-full' />
+      <div className='menu-image w-full max-w-[700px] h-[350px] lg:h-[450px] flex-shrink-0'>
+        <LazyImage 
+          src="./img/img9.webp" 
+          alt="Menu showcase" 
+          className='rounded-3xl object-cover w-full h-full' 
+          containerClassName='rounded-3xl h-full'
+        />
       </div>
 
       <div className="flex flex-col space-y-8 justify-center w-full lg:w-auto">

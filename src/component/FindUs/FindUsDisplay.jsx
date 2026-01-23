@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Button from '../common/Button'
+import LazyImage from '../common/LazyImage'
 import { useNavigate } from 'react-router-dom'
 import { FaMapLocationDot } from "react-icons/fa6";
 import { TbClockHour4Filled } from "react-icons/tb";
@@ -91,8 +92,13 @@ const MenuDisplay = () => {
   return (
     <div ref={containerRef} data-theme="light" className='min-h-dvh w-full overflow-x-hidden pt-20 md:pt-12 p-8 md:p-12 lg:p-20 bg-stone-50'>
         <div className='flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto'>
-          <div className='findus-image rounded-3xl overflow-hidden flex-shrink-0 lg:w-1/2'>
-            <img src="./img/location.webp" alt="" className='h-[300px] lg:h-[450px] w-full object-cover scale-125' />
+          <div className='findus-image flex-shrink-0 lg:w-1/2'>
+            <LazyImage 
+              src="./img/location.webp" 
+              alt="Miaoshan Cafe Location" 
+              className='h-[300px] lg:h-[450px] w-full object-cover scale-125' 
+              containerClassName='rounded-3xl overflow-hidden h-[300px] lg:h-[450px]'
+            />
           </div>
           <div className="flex flex-col space-y-8 justify-center w-full lg:flex-1">
         <div className="flex flex-col space-y-3">

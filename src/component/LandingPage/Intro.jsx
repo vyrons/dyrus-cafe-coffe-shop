@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Button from '../common/Button';
+import LazyImage from '../common/LazyImage';
 import { useNavigate } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -62,11 +63,12 @@ const Intro = () => {
       ref={containerRef}
     >
 
-      <div className="intro-image relative w-full max-w-[600px] h-[400px] lg:h-[400px] rounded-3xl flex-shrink-0">
-        <img
+      <div className="intro-image w-full max-w-[600px] h-[400px] lg:h-[400px] flex-shrink-0">
+        <LazyImage
           src="./img/img1.webp"
           alt="Interior of the coffee shop"
           className="rounded-3xl object-cover w-full h-full"
+          containerClassName="rounded-3xl h-full"
         />
       </div>
 
