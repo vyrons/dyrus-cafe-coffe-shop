@@ -62,7 +62,7 @@ const Intro = () => {
       ref={containerRef}
     >
 
-      <div className="intro-image relative w-full max-w-[600px] h-[400px] lg:h-[600px] rounded-3xl flex-shrink-0">
+      <div className="intro-image relative w-full max-w-[600px] h-[400px] lg:h-[400px] rounded-3xl flex-shrink-0">
         <img
           src="./img/img1.webp"
           alt="Interior of the coffee shop"

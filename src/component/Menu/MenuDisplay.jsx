@@ -43,9 +43,9 @@ const MenuDisplay = () => {
     <section 
       ref={containerRef}
       data-theme="light" 
-      className='flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 items-center h-auto min-h-dvh w-full bg-stone-50 p-8 lg:p-20 overflow-hidden'
+      className='flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8 items-center h-auto min-h-dvh w-full bg-stone-50 pt-20 md:pt-8 p-8 lg:p-20 overflow-hidden'
     >
-      <div className='menu-image relative w-full max-w-[600px] h-[350px] lg:h-[450px] rounded-3xl flex-shrink-0 overflow-hidden'>
+      <div className='menu-image relative w-full max-w-[700px] h-[350px] lg:h-[450px] rounded-3xl flex-shrink-0 overflow-hidden'>
         <img src="./img/img9.webp" alt="Menu showcase" className='rounded-3xl object-cover w-full h-full' />
       </div>
 
@@ -63,7 +63,7 @@ const MenuDisplay = () => {
 
           <div className="menu-description">
             <p className="font-ranade text-[15px] leading-relaxed">
-              A quiet corner to pause, reflect, and reconnect — <br className="hidden lg:block" />
+              A quiet corner to pause, reflect, and reconnect <br className="hidden lg:block" />
               where warm light, gentle aromas, <br className="hidden lg:block" />
               and good coffee come together naturally.
             </p>
