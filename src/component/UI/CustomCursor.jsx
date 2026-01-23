@@ -1,12 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(true); // Start as true to prevent flash
   
   useEffect(() => {
-    // Only run on desktop/devices with hover capability
+    // Check if device is touch-enabled
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsMobile(isTouchDevice);
+    
+    // Only run cursor logic on desktop
     if (isTouchDevice) return;
 
     const cursor = cursorRef.current;
@@ -80,6 +84,9 @@ const CustomCursor = () => {
         });
     };
   }, []);
+
+  // Don't render cursor on mobile devices
+  if (isMobile) return null;
 
   return (
     <div 
