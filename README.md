@@ -1,6 +1,7 @@
 # Coffee Shop Website
 
 A modern, responsive coffee shop website built with React, Vite, and Tailwind CSS. Featuring a sleek hero section with custom fonts and a focus on craft coffee experiences.
+[BEWARE!!!: This project mayority AI assist but not fully AI generated. the AI just for fix a bug, responsive, make scrollbar, integrated custom cursor from prev project in my repo, and refactor. Actually for designing the mayor components, UI,  & fix code from AI, it's made from me. Thanks, i still learn btw]
 
 ## About
 
@@ -108,3 +109,4 @@ coffee-shop/
 ## License
 
 This project is private and proprietary.
+
