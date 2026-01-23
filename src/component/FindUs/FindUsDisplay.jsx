@@ -89,7 +89,7 @@ const MenuDisplay = () => {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} data-theme="light" className='min-h-dvh w-full overflow-x-hidden p-8 md:p-12 lg:p-20 bg-stone-50'>
+    <div ref={containerRef} data-theme="light" className='min-h-dvh w-full overflow-x-hidden pt-20 md:pt-12 p-8 md:p-12 lg:p-20 bg-stone-50'>
         <div className='flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto'>
           <div className='findus-image rounded-3xl overflow-hidden flex-shrink-0 lg:w-1/2'>
             <img src="./img/location.webp" alt="" className='h-[300px] lg:h-[450px] w-full object-cover scale-125' />

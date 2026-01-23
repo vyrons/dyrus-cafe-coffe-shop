@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import LandingPage from './component/LandingPage/LandingPage'
 import Menu from './component/Menu/Menu'
 import AboutUs from './component/AboutUs/AboutUs'
 import FindUs from './component/FindUs/FindUs'
+import ScrollToTop from './component/common/ScrollToTop'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 
@@ -16,10 +17,18 @@ const App = () => {
     });
 
     gsap.ticker.lagSmoothing(0);
+
+    window.lenis = lenis;
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove();
+    };
   }, []);
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/menu" element={<Menu />} />
