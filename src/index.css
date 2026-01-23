@@ -16,11 +16,11 @@ body {
 @layer base {
   @font-face {
     font-family: "ranade-regular";
-    src: url("./fonts/Ranade-Regular.woff2") format("woff2");
+    src: url("/fonts/Ranade-Regular.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "novar";
-    src: url("./fonts/Novar.woff2") format("woff2");
+    src: url("/fonts/Novar.woff2") format("woff2");
   }
 }
