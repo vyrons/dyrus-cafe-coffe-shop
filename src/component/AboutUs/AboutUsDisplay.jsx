@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import LazyImage from '../common/LazyImage'
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -47,9 +48,14 @@ const AboutUsContain = () => {
 
   return (
     <div ref={containerRef} data-theme="light" className='min-h-dvh w-full overflow-x-hidden pt-20 md:pt-12 p-8 md:p-12 lg:p-20 bg-stone-50'>
-      <div className='aboutus-image findus-image rounded-3xl overflow-hidden flex-shrink-0 lg:w-full relative'>
-        <img src="./img/img10.webp" alt="" className='h-[300px] lg:h-[300px] w-full object-cover scale-125' />
-        <div className='absolute inset-0 bg-black/20'></div>
+      <div className='aboutus-image findus-image flex-shrink-0 lg:w-full relative'>
+        <LazyImage 
+          src="./img/img10.webp" 
+          alt="About Miaoshan Cafe" 
+          className='h-[300px] lg:h-[300px] w-full object-cover scale-125' 
+          containerClassName='rounded-3xl overflow-hidden h-[300px] lg:h-[300px]'
+        />
+        <div className='absolute inset-0 bg-black/20 pointer-events-none'></div>
       </div>
 
       <div className='mt-12 lg:mt-8 w-full mx-auto'>

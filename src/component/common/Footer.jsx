@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from './LazyImage';
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
@@ -6,13 +7,14 @@ const Footer = () => {
     <footer id="findus" data-theme="dark" className="relative h-screen min-h-[600px] w-full overflow-hidden text-white">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <LazyImage
           src="/img/footer.webp"
           alt="Coffee Shop Ambiance"
           className="h-full w-full object-cover"
+          containerClassName="h-full w-full"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
       </div>
 
       {/* Content */}
